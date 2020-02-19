@@ -13,6 +13,7 @@ Tecnologias utilizadas
  - HTML5/CSS
  - Dashboards - Google Data Studio
  - Heroku - Hospagem do App 
+ - API google Maps.  
 
 
 Instalando o projeto 
