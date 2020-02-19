@@ -3,15 +3,17 @@
 Projeto Desenvolvido para o Mega Hack 2020. 
 
 - Link para o Protótipo Online 
-
   https://cognoprospect.herokuapp.com
 
 Tecnologias utilizadas 
  
  - NodeJS
- - MySQL
+ - MySQL 
  - Python (Crawler)
  - HTML5/CSS
+ - Dashboards - Google Data Studio
+ - Heroku - Hospagem do App 
+
 
 Instalando o projeto 
 
