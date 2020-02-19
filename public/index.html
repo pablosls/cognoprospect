@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cogno Prospect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="/static/css/bootstrap4-4-1.css">
+    <link rel="stylesheet" href="/static/css/card.css">
+    <script src="/static/scripts/jquery-3-4-1.js"></script>
+    <script src="/static/scripts/popper-1-16-0.min.js"></script>
+    <script src="/static/scripts/bootstrap-4-4-1.js"></script>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
+
+</head>
+
+<body>
+    <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div class="container">
+            <a href="/" class="navbar-brand">Cogno Prospect</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../help/">Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://blog.bootswatch.com">Blog</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="bs-docs-section">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 id="buttons">Buttons</h1>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-4 text-right">
+                    <a class="btn btn-primary btn-lg btn-block" href="/">Prospects</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <a class="btn btn-primary btn-lg btn-block" href="/analytics">Prospect Analytics</a>
+                </div>
+                <div class="col-md-4 text-left">
+                    <a class="btn btn-primary btn-lg btn-block" href="/planos">Planos</a>
+                </div>
+            </div>
+
+            <br>
+            <button type="text" class="btn btn-outline-dark btn-lg" id="btnNew"> Novo Prospect
+            </button>
+
+            <br>
+
+            <div class="bs-docs-section" id="area-form">
+
+                <div class="row">
+                    <div class="col-lg-12">
+
+                        <div class="bs-component">
+                            <div class="jumbotron">
+                                <!-- <img src="/static/img/logo.png" /> -->
+
+                                <p class="lead text-center">Novo Prospect</p>
+                                <hr class="my-4">
+
+                                <form method="post" id="formUser" action="/user" enctype="multipart/form-data">
+
+                                    <div class="form-group">
+                                        <label for="txtName">Nome</label>
+                                        <input type="txt" class="form-control" id="txtName" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="txtTelefone">Telefone</label>
+                                        <input type="txt" class="form-control" id="txtPhone" placeholder="">
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email</label>
+                                        <input type="email" class="form-control" id="txtEmail"
+                                            aria-describedby="emailHelp" placeholder="">
+                                        <small id="emailHelp" class="form-text text-muted">Informe o e-mail do
+                                            cliente.</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Região onde reside atualmente</label>
+                                        <input type="text" class="form-control" id="txtAddress"
+                                            aria-describedby="emailHelp" placeholder="">
+                                        <small id="emailHelp" class="form-text text-muted">Informe o e-mail do
+                                            cliente.</small>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Linkedin</label>
+                                        <input type="text" class="form-control" id="txtLinkedin"
+                                            aria-describedby="linkedinHelp" placeholder="">
+                                        <small id="linkedinHelp" class="form-text text-muted">Informe o linked para
+                                            Monitoramento</small>
+                                    </div>
+
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                        <label class="form-check-label" for="exampleCheck1">Notificar
+                                            Atualizações</label>
+                                    </div>
+
+
+                                    <button type="text" class="btn btn-primary btn-lg" id="btnSubmit"> Cadastrar
+                                    </button>
+
+                                    <button type="text" class="btn btn-primary btn-lg" id="btnCancel"> Cancelar
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <br>
+
+            <div class="bs-docs-section" id="list-Customers">
+
+
+                <div id="cards">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+
+                                <table align="center">
+                                    <tr>
+                                        <td align="center"><img style="background-color: red;"
+                                                src="/static/images/person.png" alt="Card image cap"></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <p class="h3"> João da Silva </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <p class="h5 text-secondary"> Vila Mariana </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <a class="btn btn-outline-dark  btn-block" href="/insight">Alertas: 1</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <a class="btn btn-outline-dark  btn-block"">Anotações: 0 </a>
+                                        </td>
+                                    </tr>
+                                <tr>
+                                    <td align=" center">
+                                                &nbsp
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card">
+
+                                <table align="center">
+                                    <tr>
+                                        <td align="center"><img style="background-color: red;"
+                                                src="/static/images/person.png" alt="Card image cap"></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <p class="h3"> Renato Santos </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <p class="h5 text-secondary"> Vila Olímpia </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <a class="btn btn-outline-dark  btn-block">Alertas: 0</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <a class="btn btn-outline-dark  btn-block"">Anotações: 0 </a>
+                                            </td>
+                                        </tr>
+                                    <tr>
+                                        <td align=" center">
+                                                &nbsp
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card">
+
+                                <table align="center">
+                                    <tr>
+                                        <td align="center"><img style="background-color: red;"
+                                                src="/static/images/person.png" alt="Card image cap"></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <p class="h3"> Juliana Alves </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <p class="h5 text-secondary"> Moema </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <a class="btn btn-outline-dark  btn-block">Insights: 0</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <a class="btn btn-outline-dark  btn-block"">Anotações: 0 </a>
+                                                </td>
+                                            </tr>
+                                        <tr>
+                                            <td align=" center">
+                                                &nbsp
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+
+                                <table align="center">
+                                    <tr>
+                                        <td align="center"><img style="background-color: red;"
+                                                src="/static/images/person.png" alt="Card image cap"></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <p class="h3"> Felipe Alves </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <p class="h5 text-secondary"> Jardim Paulista </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <a class="btn btn-outline-dark  btn-block">Insights: 1</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <a class="btn btn-outline-dark  btn-block"">Anotações: 0 </a>
+                                                </td>
+                                            </tr>
+                                        <tr>
+                                            <td align=" center">
+                                                &nbsp
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+
+                                <table align="center">
+                                    <tr>
+                                        <td align="center"><img style="background-color: red;"
+                                                src="/static/images/person.png" alt="Card image cap"></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <p class="h3"> Renata Oliveira </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <p class="h5 text-secondary"> Guarulhos </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <a class="btn btn-outline-dark  btn-block">Insights: 0</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <a class="btn btn-outline-dark  btn-block"">Anotações: 0 </a>
+                                                </td>
+                                            </tr>
+                                        <tr>
+                                            <td align=" center">
+                                                &nbsp
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+
+                                <table align="center">
+                                    <tr>
+                                        <td align="center"><img style="background-color: red;"
+                                                src="/static/images/person.png" alt="Card image cap"></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <p class="h3"> Pedro Mendes </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <p class="h5 text-secondary"> Morumbi </p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <a class="btn btn-outline-dark  btn-block">Insights: 1</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center">
+                                            <a class="btn btn-outline-dark  btn-block"">Anotações: 3 </a>
+                                                </td>
+                                            </tr>
+                                        <tr>
+                                            <td align=" center">
+                                                &nbsp
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        </br>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+    </div>
+
+
+
+    <div id="source-modal" class="modal fade" tabindex='-1'>
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Source Code</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <pre contenteditable></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="/static/script/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
+
+    <script>
+        $('#inputGroupFile02').on('change', function () {
+            //get the file name
+            var fileName = $(this).val();
+            //replace the "Choose a file" label
+            $(this).next('.custom-file-label').html(fileName);
+        })
+
+
+        function loadCustomers() {
+            $.ajax({
+                type: "GET",
+                url: '/user',
+                contentType: 'application/json',
+                success: function (data) {
+                    console.log(data);
+                    $('#list-Customers').show();
+                    //$('#boxCustomers').text(JSON.stringify(data));
+                    $("#btnNew").show();
+                    data.forEach(element => {
+                        console.log(element.name)
+                    })
+                }
+            });
+        }
+
+        $(function () {
+
+            loadCustomers();
+
+            $('#area-form').hide();
+
+            $('#btnNew').click(function (e) {
+                e.preventDefault();
+                $('#area-form').show();
+                $('#list-Customers').hide();
+                $('#btnNew').hide();
+
+            });
+
+            $('#btnCancel').click(function (e) {
+                e.preventDefault();
+                $('#area-form').hide();
+                $('#list-Customers').show();
+                $('#btnNew').show();
+
+            });
+
+            $("#btnSubmit").click(function (e) {
+                e.preventDefault();
+                dataUser = {
+                    name: $("#txtName").val(),
+                    phone: $("#txtPhone").val(),
+                    linkedin: $("#txtLinkedin").val(),
+                    address: $("#txtAddress").val(),
+                    email: $("#txtEmail").val(),
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: '/user',
+                    contentType: 'application/json',
+                    data: JSON.stringify(dataUser),
+                    success: function (data) {
+                        $('#area-form').hide();
+                        loadCustomers();
+
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Cogno Prospect</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="/static/css/bootstrap4-4-1.css">
+    <script src="/static/scripts/jquery-3-4-1.js"></script>
+    <script src="/static/scripts/popper-1-16-0.min.js"></script>
+    <script src="/static/scripts/bootstrap-4-4-1.js"></script>
+</head>
+
+<body>
+    <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div class="container">
+            <a href="/" class="navbar-brand">Cogno Prospect</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="../help/">Help</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://blog.bootswatch.com">Blog</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container">
+
+        <!-- Buttons
+      ================================================== -->
+        <div class="bs-docs-section">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 id="buttons">Buttons</h1>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col-md-4 text-right">
+                    <a class="btn btn-primary btn-lg btn-block" href="/">Prospects</a>
+                </div>
+                <div class="col-md-4 text-center">
+                    <a class="btn btn-primary btn-lg btn-block" href="/analytics">Prospect Analytics</a>
+                </div>
+                <div class="col-md-4 text-left">
+                    <a class="btn btn-primary btn-lg btn-block" href="/planos">Planos</a>
+                </div>
+            </div>
+
+            <br>
+            
+
+            <div id="prospect-analytics">
+                <iframe width="1200" height="900"
+                    src="https://datastudio.google.com/embed/reporting/5279624f-7f76-40c7-9c69-c954f8f3c606/page/2BHFB"
+                    frameborder="0" style="border:0" allowfullscreen></iframe>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <div id="source-modal" class="modal fade" tabindex='-1'>
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Source Code</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <pre contenteditable></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="/static/script/jquery.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
+
+    <script>
+        $('#inputGroupFile02').on('change', function () {
+            //get the file name
+            var fileName = $(this).val();
+            //replace the "Choose a file" label
+            $(this).next('.custom-file-label').html(fileName);
+        })
+
+
+        function loadCustomers() {
+            $.ajax({
+                type: "GET",
+                url: '/user',
+                contentType: 'application/json',
+                success: function (data) {
+                    console.log(data);
+                    $('#list-Customers').show();
+                    $('#boxCustomers').text(JSON.stringify(data));
+                    data.forEach(element => {
+                        console.log(element.name)
+                    })
+                }
+            });
+        }
+
+        $(function () {
+
+            //loadCustomers();
+
+            $('#area-form').hide();
+
+            $('#btnNew').click(function (e) {
+                e.preventDefault();
+                $('#area-form').show();
+                $('#list-Customers').hide();
+
+            });
+
+            $('#btnCancel').click(function (e) {
+                e.preventDefault();
+                $('#area-form').hide();
+                $('#list-Customers').show();
+
+            });
+
+            $("#btnSubmit").click(function (e) {
+                e.preventDefault();
+                dataUser = {
+                    name: $("#txtName").val(),
+                    phone: $("#txtPhone").val(),
+                    linkedin: $("#txtLinkedin").val(),
+                    address: $("#txtAddress").val(),
+                    email: $("#txtEmail").val(),
+                }
+
+                $.ajax({
+                    type: "POST",
+                    url: '/user',
+                    contentType: 'application/json',
+                    data: JSON.stringify(dataUser),
+                    success: function (data) {
+                        $('#area-form').hide();
+                        loadCustomers();
+
+                    }
+                });
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
