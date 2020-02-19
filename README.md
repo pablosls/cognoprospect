@@ -1,4 +1,4 @@
-# cognoprospect
+# Cogno Prospect
 
 Projeto Desenvolvido para o Mega Hack 2020. 
 
